@@ -1,0 +1,40 @@
+{% extends "mentor.html" %}
+
+{% block mentor_content %}
+    <div id="user-menu">
+        <ul>
+            <li><a class="user-menu-default" href="{%url 'mentor_predmeti' %}">Predmeti</a></li>
+        </ul>
+    </div>
+    <div class="user-list-container">
+        {% block mentor_studenti_content %}
+        <div id="user-menu">
+            <ul>
+                <li><a class="user-menu-selected" href="{% url 'mentor_studenti_nepolozeni' predmet.id %}">Nepolozeni</a></li>
+                <li><a class="user-menu-selected" href="{% url 'mentor_studenti_polozeni' predmet.id %}">Polozeni</a></li>
+                <li><a class="user-menu-selected" href="{% url 'mentor_studenti_ispisani' predmet.id %}">Ispisani</a></li>
+            </ul>
+        </div>
+        <div class="user-list-menu">
+            <p>Lista studenata:</p>
+          
+        </div>
+        <div class="user-list">
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <th>Status</th>
+                </tr>
+                {% for user in users %}
+                    {% if user.role.naziv == "Student" %}
+                        <tr>
+                            <td><a id="user" href="{% url 'student' user.id %}"><p>{{ user.email }}</p></a></td>
+                            <td><p>{{ user.status }}</p></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+        {% endblock %}
+    </div>
+{% endblock mentor_content %}

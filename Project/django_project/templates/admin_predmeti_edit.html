@@ -1,0 +1,27 @@
+{% extends "mentor.html" %}
+
+{% block mentor_content %}
+<div class="back-link">
+    <a href="{%url 'admin_predmeti' %}">Nazad na Predmete</a>
+</div>
+
+<h3>Izmjeni {{ predmet.ime }}:</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        {% for field in predmet_edit_form %}
+            <p>
+                {{ field.label_tag }}
+                {{ field }}
+                {% for error in field.errors %}
+                    <span class="user-error">{{ error }}</span>
+                {% endfor %}
+            </p>
+        {% endfor %}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn" type="submit">Izmjeni</button>
+    </div>
+</form>
+{% endblock mentor_content %}

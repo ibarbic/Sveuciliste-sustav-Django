@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Asap, sans-serif;
+}
+body {
+  background-color: rgb(252, 249, 249);
+}
+h1 {
+  color: rgb(26, 45, 104);
+}
+h4 {
+  color: rgb(18, 31, 70);
+}
+a {
+  margin: 0px;
+}
+
+.top-header {
+  height: 50px;
+  background-color: rgb(98, 175, 206);
+}
+.top-header a {
+  color: white;
+}
+
+.center-container {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-left-header {
+  margin-top: 10px;
+  float: left;
+}
+.top-left-header h2 {
+  display: inline-block;
+  color: white;
+  margin-right: 20px;
+}
+
+.top-right-header {
+  margin-top: 17px;
+  float: right;
+}
+.top-right-header a {
+  margin-left: 15px;
+}
+.top-right-header img {
+  margin-right: 5px;
+  height: 14px;
+  width: 14px;
+  filter: brightness(0) invert(1);
+}
+.top-right-header a:hover {
+  color: rgb(26, 45, 104);
+}
+.top-right-header a:hover img {
+  filter: brightness(100%);
+}
+
+#user {
+  text-decoration: none;
+}
+
+#user-name {
+  margin-right: 5px;
+}
+
+.message {
+  height: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: rgb(206, 250, 206);
+  text-align: center;
+  color: rgb(26, 45, 104);
+}
+.no-message {
+  height: 30px;
+}
+
+#home-container {
+  background-color: white;
+  border: 1px solid rgb(226, 223, 223);
+  text-align: center;
+}
+#home-container img {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.users-container {
+  background-color: white;
+  border: 1px solid rgb(226, 223, 223);
+  flex-wrap: wrap;
+}
+
+.users-center-container {
+  margin: 20px;
+}
+
+.users-center-container h1 {
+  margin-bottom: 30px;
+}
+.users-center-container h3 {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(226, 223, 223);
+  color: rgb(26, 45, 104);
+}
+.users-center-container h4 {
+  margin: 15px;
+  font-weight: normal;
+  font-size: 20px;
+}
+.reset-password-instr h4 {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.form-group {
+  border: none;
+  font-size: 18px;
+}
+.form-group input {
+  margin-bottom: 15px;
+  height: 18px;
+  margin-left: 10px;
+}
+.form-group input[type="number"] {
+  width: 50px;
+  height: 18px;
+  margin-left: 10px;
+}
+.form-group select {
+  margin-bottom: 15px;
+  height: 19px;
+  width: 80px;
+  margin-left: 10px;
+}
+
+.user-form {
+  display: inline;
+}
+.user-error {
+  color: rgb(167, 45, 45);
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 30px;
+  width: 70px;
+  background-color: white;
+  color: rgb(26, 45, 104);
+  border: 2px solid rgb(26, 45, 104);
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(26, 45, 104);
+  color: white;
+}
+
+#user-menu {
+  text-align: center;
+  border-bottom: 1px solid rgb(226, 223, 223);
+}
+#user-menu ul {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+#user-menu li {
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline;
+}
+#user-menu li a:hover {
+  color: rgb(26, 45, 104);
+  text-decoration: none;
+}
+.user-menu-default {
+  color: rgb(19, 111, 151);
+}
+.user-menu-default:hover {
+  color: rgb(26, 45, 104);
+}
+.user-menu-selected {
+  color: rgb(26, 45, 104);
+  text-decoration: none;
+}
+
+.user-list-container {
+  padding-bottom: 5px;
+}
+.user-list-menu {
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(226, 223, 223);
+}
+.user-list-menu p {
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  color: rgb(71, 92, 167);
+}
+.user-list-menu a {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.user-list-menu a:hover {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: rgb(26, 45, 104);
+  text-decoration: none;
+}
+
+.user-list table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user-list th {
+  border-collapse: collapse;
+  color: rgb(26, 45, 104);
+  border: 1px solid black;
+  padding: 8px;
+}
+.user-list tr {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+.user-list td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  padding: 5px;
+  min-width: 150px;
+}
+
+.user-left {
+  width: 45%;
+  float: left;
+  margin-right: 5%;
+}
+.user-right {
+  width: 50%;
+  overflow: auto;
+}
+.user-predmeti-list {
+  padding: 10px;
+  border: 1px solid rgb(226, 223, 223);
+  overflow-x: hidden;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+.user-semestri-list {
+  padding: 10px;
+  border: 1px solid rgb(226, 223, 223);
+  overflow-x: hidden;
+  height: 600px;
+  overflow-y: scroll;
+}
+.user-semestri-list table {
+  border-collapse: collapse;
+  margin-left: 5px;
+}
+.user-semestri-list td {
+  padding: 5px;
+}
+.semestar {
+  border-bottom: 1px solid rgb(226, 223, 223);
+}
+
+.user-predmeti-list table {
+  border-collapse: collapse;
+}
+.user-predmeti-list tr {
+  border-bottom: 1px solid rgb(226, 223, 223);
+}
+.user-predmeti-list td {
+  padding: 5px;
+}
+
+.add-btn {
+  color: rgb(55, 81, 160);
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(199, 230, 243);
+  width: 20px;
+}
+
+.add-btn:hover {
+  background-color: rgb(255, 255, 255);
+  width: 20px;
+}
+
+#add-subject-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mentor-predmeti-container {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-add-predmeti {
+  height: 680px;
+}
+
+.back-link {
+  padding-bottom: 10px;
+}
+.back-link a {
+  color: rgb(19, 111, 151);
+}
+.back-link a:hover {
+  color: rgb(26, 45, 104);
+}

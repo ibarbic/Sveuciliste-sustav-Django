@@ -1,0 +1,44 @@
+{% extends "admin.html" %}
+
+{% block mentor_content %}
+{% load static %}
+    <div id="user-menu">
+        <ul>
+            <li><a  class="user-menu-default" href="{%url 'admin_studenti' %}">Studenti</a></li>
+            <li><a  class="user-menu-selected" href="{%url 'admin_predmeti' %}">Predmeti</a></li>
+            <li><a class="user-menu-default" href="{%url 'admin_mentori' %}">Mentori</a></li>
+        </ul>
+    </div>
+    <div class="mentor-predmeti-container">
+        <div id="add-subject-container">
+            <a class="user-menu-default" href="{%url 'admin_predmeti_add' %}">+ Dodaj novi predmet</a>
+        </div>
+        
+        <div class="user-predmeti-list">
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                {% for predmet in predmeti %}
+                    <tr>
+                        <td><p>{{ predmet.kod }}</p></td>
+                        <td><a id="predmet" href="{% url 'admin_predmeti_studenti' predmet.id %}"><p>{{ predmet.ime }}</p></a></td>
+                        <td>
+                            <button type='submit' class='add-btn' name="{{ predmet }}" value='edit'>
+                                <img src="{% static 'edit_icon.png' %}" width="11px" height="11px">
+                            </button>
+                        </td>
+                        <td>
+                            <button type='submit' class='add-btn' name="{{ predmet }}" value='delete'>
+                                <img src="{% static 'delete_icon.png' %}" width="11px" height="11px">
+                            </button>
+                        </td>
+                      
+                    </tr>
+                {% endfor %}
+                </table>
+            </form>
+        </div>
+    </div>
+
+    
+{% endblock mentor_content %}

@@ -1,0 +1,26 @@
+{% extends "admin_studenti.html" %}
+
+{% block mentor_studenti_content %}
+    <div class="user-list-menu">
+        <p>Lista studenata:</p>
+        <a class="user-menu-default" href="{%url 'admin_studenti' %}">Svi</a>
+        <a class="user-menu-selected" href="{%url 'admin_studenti_redovni' %}">Redovni</a>
+        <a class="user-menu-default" href="{%url 'admin_studenti_izvanredni' %}">Izvanredni</a>
+    </div>
+    <div class="user-list">
+        <table>
+            <tr>
+                <th>Student</th>
+                <th>Status</th>
+            </tr>
+            {% for user in users %}
+                {% if user.status == "redovni" and user.role.naziv == "Student" %}
+                    <tr>
+                        <td><a id="user" href="{% url 'student' user.id %}"><p>{{ user.email }}</p></a></td>
+                        <td><p>{{ user.status }}</p></td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+{% endblock mentor_studenti_content %}

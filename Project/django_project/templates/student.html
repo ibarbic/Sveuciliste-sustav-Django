@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load static %}
+    <div class="users-container">
+        <div class="users-center-container">
+            <h3 id="user" href="{% url 'student' user.id %}">
+                {{ user.email }}</h3>
+            <div class="user-left">
+                <a id="user" href="{% url 'admin_studenti_edit' user.id %}"><p>Izmjeni korisnika</p></a></td>
+                <h4>Upisi</h4>
+                <div class="user-semestri-list">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ upisi|safe }}
+                    </form>
+                </div>
+            </div>
+            <div class="user-right">
+                <h4>Predmeti</h4>
+                <div class="user-predmeti-list">
+                    <table>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% for predmet in predmeti %}    
+                                    {% if redovni_polozeni == counter_redovni %}
+                                        <tr>   
+                                            <td><button type='submit' class='add-btn' name="{{ predmet }}" value='added'>+</button></td>
+                                            <td><p>{{ predmet.ime }}</p></td>
+                                        </tr>
+
+                                    {% endif %}
+                                
+                                    {% if redovni_polozeni != counter_redovni %}
+                                        {% if predmet.sem_redovni != 5 and predmet.sem_redovni != 6 %}
+                                            <tr>   
+                                                <td><button type='submit' class='add-btn' name="{{ predmet }}" value='added'>+</button></td>
+                                                <td><p>{{ predmet.ime }}</p></td>
+                                            </tr>
+                                        {% endif %}
+
+                                    {% endif %}
+
+                                    
+
+                                
+                            {% endfor %}
+                        </form>
+                    </table>
+                </div>
+            </div>  
+        </div>
+    </div>
+{% endblock content %}

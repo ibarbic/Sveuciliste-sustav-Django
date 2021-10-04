@@ -1,0 +1,35 @@
+{% extends "admin.html" %}
+
+{% block mentor_content %}
+    <div id="user-menu">
+        <ul>
+            <li><a class="user-menu-selected" href="{%url 'admin_studenti' %}">Studenti</a></li>
+            <li><a class="user-menu-default" href="{%url 'admin_predmeti' %}">Predmeti</a></li>
+            <li><a class="user-menu-default" href="{%url 'admin_mentori' %}">Mentori</a></li>
+        </ul>
+    </div>
+    <div class="user-list-container">
+        {% block mentor_studenti_content %}
+        <div class="user-list-menu">
+            <p>Lista mentora:</p>
+    
+        </div>
+        <div class="user-list">
+            <table>
+                <tr>
+                    <th>Mentori</th>
+
+                </tr>
+                {% for user in users %}
+                    {% if user.role.naziv == "Mentor" %}
+                        <tr>
+                            <td><a id="user" href="{% url 'admin_studenti_edit' user.id %}"><p>{{ user.email }}</p></a></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+        <div><ul><a class="user-menu-default" href="{%url 'admin_studenti_add' %}">+ Dodaj novog korisnika</a></ul></div>
+        {% endblock %}
+    </div>
+{% endblock mentor_content %}

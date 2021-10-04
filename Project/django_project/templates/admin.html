@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="users-container">
+        <div class="users-center-container">
+            {% block mentor_content %}
+            <div id="user-menu">
+                <ul>
+                    <li><a class="user-menu-default" href="{%url 'admin_studenti' %}">Studenti</a></li>
+                    <li><a class="user-menu-default" href="{%url 'admin_predmeti' %}">Predmeti</a></li>
+                    <li><a class="user-menu-default" href="{%url 'admin_mentori' %}">Mentori</a></li>
+                </ul>
+            </div>
+		    {% endblock %}
+        </div>
+    </div>
+{% endblock content %}

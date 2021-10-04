@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load static %}
+    <div class="users-container">
+        <div class="users-center-container">
+            <h3>{{ user.email }}</h3>
+            <div class="user-left">
+                <h4>Upisi</h4>
+                <div class="user-semestri-list">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ upisi|safe }}
+                    </form>
+                </div>
+            </div>
+            <div class="user-right">
+                <h4>Predmeti</h4>
+                <div class="user-predmeti-list">
+                    <table>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {% for predmet in predmeti %}
+                                <tr>   
+                                    <td><button type='submit' class='add-btn' name="{{ predmet }}" value='added'>+</button></td>
+                                    <td><p>{{ predmet.ime }}</p></td>
+                                </tr>
+                            {% endfor %}
+                        </form>
+                    </table>
+                </div>
+            </div>  
+        </div>
+    </div>
+{% endblock content %}

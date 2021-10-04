@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="users-container">
+        <div class="users-center-container">
+            <h1>Register Page</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    {% for field in registration_form %}
+                        <p>
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% for error in field.errors %}
+                                <span class="user-error">{{ error }}</span>
+                            {% endfor %}
+                        </p>
+                    {% endfor %}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn" type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
